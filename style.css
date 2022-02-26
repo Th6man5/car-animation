@@ -1,0 +1,78 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  text-align: center;
+  background-image: url("road.png");
+  animation: scroll 70s linear infinite;
+  background-repeat: repeat-x;
+}
+
+#wheel-1 {
+  animation: wheel 0.1s infinite ease-in-out;
+  transform-origin: center;
+  transform-box: fill-box;
+}
+
+#wheel-2 {
+  animation: wheel 0.1s infinite ease-in-out;
+  transform-origin: center;
+  transform-box: fill-box;
+}
+
+#car {
+  animation: car 4s alternate infinite ease-in-out;
+  transform-origin: center;
+  transform-box: fill-box;
+}
+
+#truck {
+  animation: truck 4s running infinite ease-in-out;
+  transform-origin: center;
+  transform-box: fill-box;
+}
+
+@keyframes wheel {
+  from {
+    transform: rotateZ(0deg);
+  }
+  to {
+    transform: rotateZ(-360deg);
+  }
+}
+
+@keyframes car {
+  0% {
+    transform: translateX(50%);
+  }
+  50% {
+    transform: translateX(50%) translateY(20%);
+  }
+  100% {
+    transform: translateX(0%) translateY(20%);
+  }
+}
+
+@keyframes scroll {
+  100% {
+    background-position: 50000px 0px;
+  }
+}
+
+@media (prefers-reduced-motion) {
+  .wrapper {
+    animation: scroll 200s linear infinite;
+  }
+}
+
+@keyframes truck {
+  0% {
+    transform: translateX(-120%);
+  }
+  100% {
+    transform: translateX(120%);
+  }
+}
